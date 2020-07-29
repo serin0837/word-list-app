@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-rows: 100px auto;
+  grid-template-areas: "header header" "aside main";
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.header {
+  grid-area: header;
+}
+.aside {
+  grid-area: aside;
+}
+.main {
+  grid-area: main;
+}
+.cards {
+  box-shadow: 0.4px 0.8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 50%;
+  padding: 20px;
+}
+.cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
