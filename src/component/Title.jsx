@@ -2,8 +2,8 @@ import React from "react";
 
 const Title = () => {
   return (
-    <header className="title">
-      <h1>Words list</h1>
+    <header className="header">
+      <h1>Words List to Remember</h1>
     </header>
   );
 };

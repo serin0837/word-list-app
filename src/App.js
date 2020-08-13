@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Title from "./component/Title";
-import Wordlist from "./component/Wordlist";
+import WordList from "./component/WordList";
 import AsideMenu from "./component/AsideMenu";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Title></Title>
       <AsideMenu></AsideMenu>
-      <Wordlist></Wordlist>
+      <WordList></WordList>
     </div>
   );
 }
