@@ -1,8 +1,12 @@
 # Word-list-app
 
-This React app is designed for memorising words that you want to remember.
+- This app is developed with React.
+- You can add words that you want to memorize.
 
-# Installation
+## install
 
-npm install
-npm start
+`npm install`
+
+## start
+
+`npm start`
