@@ -3,6 +3,7 @@
 
 * things to do
 
-1. WordAdder
+0. brake everything.. need to fix!
+1. WordAdder -> can not add..
 2. if i know the word -> card go somewhere
 3. card flip

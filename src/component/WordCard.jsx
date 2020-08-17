@@ -1,18 +1,12 @@
 import React from "react";
 
-const WordCard = ({ wordName, data, know }) => {
-  const handleClick = (event) => {
-    const knowWord = event.target.name;
-    know(knowWord);
-  };
+const WordCard = ({ word }) => {
   return (
     <section className="list__card">
-      <h2>{wordName}</h2>
-      <p>{data.meaning}</p>
-      <p>{data.note}</p>
-      <button onClick={handleClick} name={wordName}>
-        I know this word!
-      </button>
+      <h2>{word.name}</h2>
+      <p>{word.meaning}</p>
+      <p>{word.note}</p>
+      <button>I know this word!</button>
     </section>
   );
 };
