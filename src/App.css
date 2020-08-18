@@ -1,9 +1,10 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-columns: 100px auto;
-  grid-template-rows: 100px auto auto 100px;
-  grid-template-areas: "header header" "aside form" "aside main" "footer footer";
+  font-size: 15px;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 70px auto auto 70px;
+  grid-template-areas: "aside header" "aside form" "aside main" "footer footer";
 }
 
 @media only screen and (max-width: 600px) {
@@ -17,6 +18,7 @@
 }
 .aside {
   grid-area: aside;
+  border-right: solid #eee 1px;
 }
 
 .form {
@@ -37,7 +39,24 @@
 
 footer {
   grid-area: footer;
-  background-color: gray;
+  background-color: #a890a0;
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+
+header {
+  background-color: #eee;
+}
+
+aside header {
+  height: 70px;
+  background-color: #eee;
+}
+
+aside header h2 {
+  margin-top: 0px;
 }
 
 .list__card {
@@ -46,3 +65,19 @@ footer {
   border-radius: 10px;
   padding: 20px;
 }
+
+.aside-button {
+  background-color: rgba(101, 0, 102, 0.2);
+  border: none;
+  padding: 10px;
+  margin: 5px 20px 5px 20px;
+  text-align: center;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* #9460b6 */
+/* 9474B8
+8E4585 */
+/* #a890a0; */

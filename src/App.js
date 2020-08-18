@@ -29,6 +29,14 @@ class App extends React.Component {
       return { words: [nword, ...currentState.words] };
     });
   };
+
+  // knowWord =(word)=>{
+  //   this.setState((currentState)=>{
+  //     return {word.remember=== "true"}
+  //   })
+  // }
+
+  //why not?
   // setState always take function// currentState and return object (new state)
   render() {
     const { words } = this.state;
