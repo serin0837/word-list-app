@@ -1,7 +1,10 @@
 import React from "react";
 
-const WordCard = ({ word }) => {
-  const handleClick = (clickEvent) => {};
+const WordCard = ({ word, removeWord }) => {
+  const handleClick = (clickEvent) => {
+    removeWord(word.id);
+    //remove word of id{word.id} from dictionary
+  };
 
   return (
     <section className="list__card">

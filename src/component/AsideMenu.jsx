@@ -17,6 +17,7 @@ class AsideMenu extends Component {
     return (
       <aside className="aside">
         <header>
+          <h2>Home</h2>
           <h2>Language List</h2>
         </header>
         {languages.map((language) => {

@@ -9,14 +9,22 @@ import Footer from "./component/Footer";
 class App extends React.Component {
   state = {
     words: [
-      { name: "하다", meaning: "do", note: "공부하다", remember: "false" },
       {
+        id: 1,
+        name: "하다",
+        meaning: "do",
+        note: "공부하다",
+        remember: "false",
+      },
+      {
+        id: 2,
         name: "선생님",
         meaning: "teacher",
         note: "선생님<-> 학생",
         remember: "false",
       },
       {
+        id: 3,
         name: "학생",
         meaning: "student",
         note: "학생이 공부하다",
@@ -27,6 +35,16 @@ class App extends React.Component {
   addWord = (nword) => {
     this.setState((currentState) => {
       return { words: [nword, ...currentState.words] };
+    });
+  };
+
+  removeWord = (wordid) => {
+    this.setState((currentState) => {
+      return {
+        words: currentState.words.filter((currentword) => {
+          return currentword.id !== wordid;
+        }),
+      };
     });
   };
 
@@ -44,8 +62,10 @@ class App extends React.Component {
       <div className="App">
         <Title />
         <AsideMenu />
-        <WordAdder addWord={this.addWord} />
-        <WordList words={words} />
+        <main className="main">
+          <WordAdder addWord={this.addWord} />
+          <WordList words={words} removeWord={this.removeWord} />
+        </main>
         <Footer />
       </div>
     );

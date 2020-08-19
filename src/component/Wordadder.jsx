@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v4 as randomNum } from "uuid";
 
 class WordAdder extends React.Component {
   state = {
@@ -10,7 +11,8 @@ class WordAdder extends React.Component {
 
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
-    this.props.addWord({ ...this.state });
+
+    this.props.addWord({ id: randomNum(), ...this.state });
     // props.addWord({
     //   name: "뭐",
     //   meaning: "what",

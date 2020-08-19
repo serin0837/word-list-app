@@ -1,13 +1,13 @@
 import React from "react";
 import WordCard from "./WordCard";
 
-const WordList = ({ words }) => {
+const WordList = ({ words, removeWord }) => {
   return (
-    <main className="main">
+    <section>
       {words.map((word) => {
-        return <WordCard word={word} key={word.name} />;
+        return <WordCard word={word} key={word.name} removeWord={removeWord} />;
       })}
-    </main>
+    </section>
   );
 };
 
