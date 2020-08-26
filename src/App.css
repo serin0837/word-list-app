@@ -1,18 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-* *::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
+/* color base:
+#DDC9A9,
+#7D4E72
+#7D4D76
+#99757B
+#D7BBAF */
 
 .App {
   text-align: center;
@@ -33,8 +24,8 @@ html {
 
 .header {
   grid-area: header;
-  margin: 1rem;
 }
+
 .aside {
   grid-area: aside;
   border-right: solid #eee 1px;
@@ -47,25 +38,76 @@ html {
   flex-wrap: wrap;
 }
 
-.form__card {
-  background-color: #eee;
-  margin: 10px 30%;
-  border-radius: 10px;
-  padding: 20px;
-  border: 20px;
-}
-
 footer {
   grid-area: footer;
   background-color: gray;
 }
 
-h1 {
-  font-size: 2rem;
+a {
+  text-decoration: none;
 }
 
-header {
-  background-color: white;
+/* ------------- */
+
+/* //how to make title go to center? */
+
+header img {
+  height: 70px;
+}
+
+.header {
+  background-color: #ddc9a9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  background-color: rgba(221, 201, 169, 0.7);
+}
+
+.form__card {
+  background-color: #d7bbaf;
+  width: 200px;
+  margin: 3rem 30%;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.form__card input {
+  margin: 1rem;
+  border-radius: 1rem;
+  border: none;
+  height: 2.5rem;
+}
+
+.form__card button {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 1.5rem;
+  border: solid gray 1px;
+  background-color: green;
+  cursor: pointer;
+  margin: 1rem;
+  font-family: inherit;
+}
+
+.form__card button:hover {
+  transform: rotate(10deg);
+}
+
+/* word adder form  */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__card {
+  background-color: #9e628f;
+  max-width: 200px;
+  margin: 2rem;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 aside header {
@@ -75,13 +117,6 @@ aside header {
 
 aside header h2 {
   margin-top: 0px;
-}
-
-.list__card {
-  background-color: plum;
-  margin: 5px 5px;
-  border-radius: 10px;
-  padding: 20px;
 }
 
 .aside-button {

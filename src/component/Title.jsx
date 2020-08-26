@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "@reach/router";
+import logo from "./wordcardlogo.png";
 
 const Title = () => {
   return (
     <header className="header">
-      <h1>Word Master</h1>
+      <Link to="./">
+        <img src={logo} alt="word card logo" />
+      </Link>
     </header>
   );
 };
