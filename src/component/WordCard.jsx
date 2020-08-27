@@ -8,9 +8,9 @@ const WordCard = ({ word, removeWord }) => {
 
   return (
     <section className="list__card">
-      <h2>{word.name}</h2>
-      <p>{word.meaning}</p>
-      <p>{word.note}</p>
+      <p>word: {word.name}</p>
+      <p>meaning: {word.meaning}</p>
+      <p>note: {word.note}</p>
       <button onClick={handleClick} value={word.remember} id="remember">
         I know this word!
       </button>

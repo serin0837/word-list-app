@@ -17,12 +17,19 @@ class AsideMenu extends Component {
     return (
       <aside className="aside">
         <header>
-          <h2>Language List</h2>
+          <h2>
+            <span>🖋</span> Languages
+          </h2>
         </header>
         {languages.map((language) => {
           return <LanguageCard language={language} key={language.name} />;
         })}
         <LanguageAdder addLanguage={this.addLanguage} />
+        <header>
+          <h2>
+            <span>🖋</span> Students
+          </h2>
+        </header>
       </aside>
     );
   }

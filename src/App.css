@@ -11,7 +11,7 @@
   height: 100vh;
   font-size: 15px;
   grid-template-columns: 200px auto;
-  grid-template-rows: 70px auto 50px;
+  grid-template-rows: 70px auto 70px;
   grid-template-areas: "header header" "aside main" "footer footer";
 }
 
@@ -28,7 +28,6 @@
 
 .aside {
   grid-area: aside;
-  border-right: solid #eee 1px;
 }
 
 .main {
@@ -40,7 +39,6 @@
 
 footer {
   grid-area: footer;
-  background-color: gray;
 }
 
 a {
@@ -49,21 +47,22 @@ a {
 
 /* ------------- */
 
-/* //how to make title go to center? */
-
 header img {
   height: 70px;
+  border: solid 0.5px #ddc9a9;
 }
 
 .header {
   background-color: #ddc9a9;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .main {
   background-color: rgba(221, 201, 169, 0.7);
 }
+
+/* word adder form  */
 
 .form__card {
   background-color: #d7bbaf;
@@ -84,8 +83,8 @@ header img {
   width: 10rem;
   height: 2.5rem;
   border-radius: 1.5rem;
-  border: solid gray 1px;
-  background-color: green;
+  border: solid black 1px;
+  background-color: purple;
   cursor: pointer;
   margin: 1rem;
   font-family: inherit;
@@ -95,28 +94,79 @@ header img {
   transform: rotate(10deg);
 }
 
-/* word adder form  */
-
+/* word card---------- */
 .cards {
   display: flex;
   flex-wrap: wrap;
+  margin: 2rem;
+  padding: 1rem;
 }
 
 .list__card {
   background-color: #9e628f;
-  max-width: 200px;
+  width: 170px;
+  max-width: 250px;
   margin: 2rem;
   border-radius: 10px;
   padding: 20px;
+  text-align: start;
+}
+
+.list__card p {
+  margin: 1rem;
+}
+
+.list__card button {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  border: solid black 1px;
+  background-color: purple;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+footer {
+  display: flex;
+  bottom: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ddc9a9;
+}
+
+footer p {
+  margin: 2rem;
+}
+
+.fa {
+  color: #7d4e72;
+  padding: 10px;
+  font-size: 2.5rem;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  color: #d7bbaf;
+  border-radius: 1rem;
+  background-color: salmon;
+}
+
+/* aside-------------------------- */
+.aside {
+  background-color: rgba(221, 201, 169, 0.7);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 aside header {
-  height: 70px;
-  background-color: white;
-}
-
-aside header h2 {
-  margin-top: 0px;
+  font-size: 1.2rem;
+  margin: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #7d4e72;
 }
 
 .aside-button {

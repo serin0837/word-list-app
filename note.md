@@ -16,3 +16,10 @@
 2. flow word, add word with parent and children
    also,
 3. npm audit fix, i can fix vulnevility
+
+27/08/20
+
+- add css
+- aside menu bookmark click-> aside menu show up
+- without button only with enter key how to create new language and new student // and only with a button + I can add language and student
+- most importantly !!! how can I connect with server
