@@ -20,10 +20,9 @@ class LanguageAdder extends Component {
   };
   render() {
     return (
-      <section>
+      <section className="adder-form">
         <form onSubmit={this.handleSubmit}>
           <label>
-            Language:
             <input
               type="text"
               onChange={this.handleInput}
@@ -31,7 +30,7 @@ class LanguageAdder extends Component {
               value={this.state.name}
             />
           </label>
-          <button>Add a language</button>
+          <button>Add</button>
         </form>
       </section>
     );

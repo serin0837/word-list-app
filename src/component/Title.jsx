@@ -4,14 +4,17 @@ import logo from "./wordcardlogo.png";
 import bookmark from "./bookmark.png";
 
 const Title = () => {
+  const toggleClick = () => {
+    this.sideBarObj.toggle();
+  };
   return (
     <header className="header">
       <Link to="/">
         <img src={logo} alt="word card logo" />
       </Link>
-      <Link to="/bookmark">
+      <span onClick={toggleClick} className="bookmark">
         <img src={bookmark} alt="bookmark" />
-      </Link>
+      </span>
     </header>
     //do I need to put link for bookmark?
   );

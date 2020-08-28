@@ -52,6 +52,10 @@ header img {
   border: solid 0.5px #ddc9a9;
 }
 
+.bookmark {
+  cursor: pointer;
+}
+
 .header {
   background-color: #ddc9a9;
   display: flex;
@@ -83,8 +87,8 @@ header img {
   width: 10rem;
   height: 2.5rem;
   border-radius: 1.5rem;
-  border: solid black 1px;
-  background-color: purple;
+  border: none;
+  background-color: salmon;
   cursor: pointer;
   margin: 1rem;
   font-family: inherit;
@@ -162,6 +166,11 @@ footer p {
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
+.closeBtn {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 aside header {
   font-size: 1.2rem;
   margin: 1rem;
@@ -180,6 +189,34 @@ aside header {
   cursor: pointer;
 }
 
+.aside-button a {
+  text-decoration: none;
+  color: purple;
+  font-weight: 700;
+}
+
+.adder-form {
+  padding: 1rem;
+}
+
+.adder-form input {
+  height: 2rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+  border: salmon solid 0.7px;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.adder-form button {
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: salmon;
+  cursor: pointer;
+  font-family: inherit;
+}
 /* #9460b6 */
 /* 9474B8
 8E4585 */
