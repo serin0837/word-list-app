@@ -1,0 +1,223 @@
+/* color base:
+#DDC9A9,
+#7D4E72
+#7D4D76
+#99757B
+#D7BBAF */
+
+.App {
+  text-align: center;
+  display: grid;
+  height: 100vh;
+  font-size: 15px;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 70px auto 70px;
+  grid-template-areas: "header header" "aside main" "footer footer";
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+footer {
+  grid-area: footer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------------- */
+
+header img {
+  height: 70px;
+  border: solid 0.5px #ddc9a9;
+}
+
+.bookmark {
+  cursor: pointer;
+}
+
+.header {
+  background-color: #ddc9a9;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main {
+  background-color: rgba(221, 201, 169, 0.7);
+}
+
+/* word adder form  */
+
+.form__card {
+  background-color: #d7bbaf;
+  width: 200px;
+  margin: 3rem 30%;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.form__card input {
+  margin: 1rem;
+  border-radius: 1rem;
+  border: none;
+  height: 2.5rem;
+}
+
+.form__card button {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: salmon;
+  cursor: pointer;
+  margin: 1rem;
+  font-family: inherit;
+}
+
+.form__card button:hover {
+  transform: rotate(10deg);
+}
+
+/* word card---------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.list__card {
+  background-color: #9e628f;
+  width: 170px;
+  max-width: 250px;
+  margin: 2rem;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: start;
+}
+
+.list__card p {
+  margin: 1rem;
+}
+
+.list__card button {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  border: solid black 1px;
+  background-color: purple;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+footer {
+  display: flex;
+  bottom: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ddc9a9;
+}
+
+footer p {
+  margin: 2rem;
+}
+
+.fa {
+  color: #7d4e72;
+  padding: 10px;
+  font-size: 2.5rem;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  color: #d7bbaf;
+  border-radius: 1rem;
+  background-color: salmon;
+}
+
+/* aside-------------------------- */
+.aside {
+  background-color: rgba(221, 201, 169, 0.7);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.closeBtn {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+aside header {
+  font-size: 1.2rem;
+  margin: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #7d4e72;
+}
+
+.aside-button {
+  background-color: rgba(101, 0, 102, 0.2);
+  border: none;
+  padding: 10px;
+  margin: 5px 20px 5px 20px;
+  text-align: center;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.aside-button a {
+  text-decoration: none;
+  color: purple;
+  font-weight: 700;
+}
+
+.adder-form {
+  padding: 1rem;
+}
+
+.adder-form input {
+  height: 2rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+  border: salmon solid 0.7px;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.adder-form button {
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: salmon;
+  cursor: pointer;
+  font-family: inherit;
+}
+/* #9460b6 */
+/* 9474B8
+8E4585 */
+/* #a890a0; */
