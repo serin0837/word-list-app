@@ -7,6 +7,12 @@ import WordAdder from "./component/WordAdder";
 import Footer from "./component/Footer";
 
 class App extends React.Component {
+  getResponse = async () => {
+    const response = await fetch("/api/hello");
+    const body = await response.json();
+    return body;
+  };
+
   state = {
     words: [
       {
