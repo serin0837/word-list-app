@@ -7,37 +7,55 @@ import WordAdder from "./component/WordAdder";
 import Footer from "./component/Footer";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      words: [],
+    };
+    this.reloadState();
+  }
+
   getResponse = async () => {
-    const response = await fetch("/api/hello");
-    const body = await response.json();
-    return body;
+    try {
+      const response = await fetch("http://localhost:5000/word");
+      const listWord = await response.json();
+      return { words: listWord };
+    } catch (error) {
+      console.log(error);
+      return { error: "I can not get words😑" };
+    }
   };
 
-  state = {
-    words: [
-      {
-        id: 1,
-        name: "하다",
-        meaning: "do",
-        note: "공부하다",
-        remember: "false",
-      },
-      {
-        id: 2,
-        name: "선생님",
-        meaning: "teacher",
-        note: "선생님<-> 학생",
-        remember: "false",
-      },
-      {
-        id: 3,
-        name: "학생",
-        meaning: "student",
-        note: "학생이 공부하다",
-        remember: "false",
-      },
-    ],
+  reloadState = async () => {
+    this.setState(await this.getResponse());
   };
+
+  // state = {
+  //   words: [],
+  // words: [
+  //   {
+  //     id: 1,
+  //     name: "하다",
+  //     meaning: "do",
+  //     note: "공부하다",
+  //     remember: "false",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "선생님",
+  //     meaning: "teacher",
+  //     note: "선생님<-> 학생",
+  //     remember: "false",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "학생",
+  //     meaning: "student",
+  //     note: "학생이 공부하다",
+  //     remember: "false",
+  //   },
+  // ],
+  // };
   addWord = (nword) => {
     this.setState((currentState) => {
       return { words: [nword, ...currentState.words] };
@@ -63,14 +81,20 @@ class App extends React.Component {
   //why not?
   // setState always take function// currentState and return object (new state)
   render() {
+    let wordList = undefined;
     const { words } = this.state;
+    if (this.state.error) {
+      wordList = <h1>error found::{this.state.error}</h1>;
+    } else {
+      wordList = <WordList words={words} removeWord={this.removeWord} />;
+    }
     return (
       <div className="App">
         <Title />
         <AsideMenu />
         <main className="main">
           <WordAdder addWord={this.addWord} />
-          <WordList words={words} removeWord={this.removeWord} />
+          {wordList}
         </main>
         <Footer />
       </div>

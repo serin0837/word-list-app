@@ -23,3 +23,17 @@
 - aside menu bookmark click-> aside menu show up
 - without button only with enter key how to create new language and new student // and only with a button + I can add language and student
 - most importantly !!! how can I connect with server
+
+  01.09.20
+  //miss yarn server and yarn client in package.json
+  -> can i just put npm server and npm client
+
+  - create server.js
+  - add proxy in client side /package.json with localhost:5000
+  - worry to connect with server and react app
+
+  07.09.20
+
+- aside bar close and open//
+- connect server and client together
+- add student name but in a same component.
