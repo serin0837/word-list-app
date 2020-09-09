@@ -1,18 +1,16 @@
 import React from "react";
-import { v4 as randomNum } from "uuid";
 
 class WordAdder extends React.Component {
   state = {
     name: "",
     meaning: "",
     note: "",
-    remember: "false",
   };
 
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
 
-    this.props.addWord({ id: randomNum(), ...this.state });
+    this.props.addWord(this.state);
     // props.addWord({
     //   name: "뭐",
     //   meaning: "what",
@@ -22,7 +20,7 @@ class WordAdder extends React.Component {
     // can not access props because we changed function to classes
     // where is props? this.props
     this.setState((currentState) => {
-      return { name: "", meaning: "", note: "", remember: "false" };
+      return { name: "", meaning: "", note: "" };
     });
   };
   handleInput = (inputEvent) => {

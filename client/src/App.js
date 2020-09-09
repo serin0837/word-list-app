@@ -15,6 +15,24 @@ class App extends React.Component {
     this.reloadState();
   }
 
+  sendWordServer = async (nWord) => {
+    try {
+      const response = await fetch("http://localhost:5000/word", {
+        method: "post",
+        body: JSON.stringify(nWord),
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+      const addedWord = await response.json();
+      return addedWord;
+    } catch (error) {
+      console.log(error);
+      return { error: "I can not post a word😑" };
+    }
+  };
+
   getResponse = async () => {
     try {
       const response = await fetch("http://localhost:5000/word");
@@ -30,36 +48,13 @@ class App extends React.Component {
     this.setState(await this.getResponse());
   };
 
-  // state = {
-  //   words: [],
-  // words: [
-  //   {
-  //     id: 1,
-  //     name: "하다",
-  //     meaning: "do",
-  //     note: "공부하다",
-  //     remember: "false",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "선생님",
-  //     meaning: "teacher",
-  //     note: "선생님<-> 학생",
-  //     remember: "false",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "학생",
-  //     meaning: "student",
-  //     note: "학생이 공부하다",
-  //     remember: "false",
-  //   },
-  // ],
-  // };
-  addWord = (nword) => {
-    this.setState((currentState) => {
-      return { words: [nword, ...currentState.words] };
-    });
+  addWord = async (nword) => {
+    try {
+      const addedWord = await this.sendWordServer(nword);
+      this.setState((currentState) => {
+        return { words: [addedWord, ...currentState.words] };
+      });
+    } catch (error) {}
   };
 
   removeWord = (wordid) => {
