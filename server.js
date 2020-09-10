@@ -41,7 +41,19 @@ app.post("/word", (req, res) => {
   res.setHeader("access-control-allow-origin", "*");
   res.status(201).send(wordToAdd);
 });
+// delete request
+app.delete("/word", (req, res) => {
+  console.log("id");
+  res.contentType("application/json");
+  res.setHeader("access-control-allow-origin", "*");
+  res.status(204);
 
+  words.filter((word) => {
+    return word.id !== req.body.id;
+  });
+});
+
+// words: currentState.words.filter(
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });

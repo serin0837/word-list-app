@@ -15,11 +15,11 @@ class App extends React.Component {
     this.reloadState();
   }
 
-  sendWordServer = async (nWord) => {
+  sendWordServer = async (newWord) => {
     try {
       const response = await fetch("http://localhost:5000/word", {
         method: "post",
-        body: JSON.stringify(nWord),
+        body: JSON.stringify(newWord),
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
@@ -28,8 +28,24 @@ class App extends React.Component {
       const addedWord = await response.json();
       return addedWord;
     } catch (error) {
+      //not catch error
       console.log(error);
       return { error: "I can not post a word😑" };
+    }
+  };
+
+  deleteWordFromServer = async (wordId) => {
+    try {
+      const response = await fetch("http://localhost:5000/word", {
+        method: "delete",
+        body: JSON.stringify({ id: wordId }),
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -48,30 +64,26 @@ class App extends React.Component {
     this.setState(await this.getResponse());
   };
 
-  addWord = async (nword) => {
+  addWord = async (newWord) => {
     try {
-      const addedWord = await this.sendWordServer(nword);
+      const addedWord = await this.sendWordServer(newWord);
       this.setState((currentState) => {
         return { words: [addedWord, ...currentState.words] };
       });
     } catch (error) {}
   };
 
-  removeWord = (wordid) => {
-    this.setState((currentState) => {
-      return {
-        words: currentState.words.filter((currentword) => {
-          return currentword.id !== wordid;
-        }),
-      };
-    });
+  removeWord = async (wordId) => {
+    await this.deleteWordFromServer(wordId);
+    await this.reloadState();
+    // this.setState((currentState) => {
+    //   return {
+    //     words: currentState.words.filter((currentword) => {
+    //       return currentword.id !== wordId;
+    //     }),
+    //   };
+    // });
   };
-
-  // knowWord =(word)=>{
-  //   this.setState((currentState)=>{
-  //     return {word.remember=== "true"}
-  //   })
-  // }
 
   //why not?
   // setState always take function// currentState and return object (new state)
