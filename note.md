@@ -32,8 +32,12 @@
   - add proxy in client side /package.json with localhost:5000
   - worry to connect with server and react app
 
-  07.09.20
+    07.09.20
 
 - aside bar close and open//
 - connect server and client together
 - add student name but in a same component.
+
+# backlog
+
+- 20.10.07 connect with mongo DB
