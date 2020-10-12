@@ -1,7 +1,9 @@
+import axios from "axios";
 import React from "react";
 
 class WordAdder extends React.Component {
   state = {
+    language:"",
     name: "",
     meaning: "",
     note: "",
@@ -9,31 +11,33 @@ class WordAdder extends React.Component {
 
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
-
-    this.props.addWord(this.state);
-    // props.addWord({
-    //   name: "뭐",
-    //   meaning: "what",
-    //   note: "d",
-    //   remember: "false",
-    // });
-    // can not access props because we changed function to classes
-    // where is props? this.props
+    const addWord ={
+      language:this.state.language,
+      name: this.state.name,
+      meaning: this.state.meaning,
+      note: this.state.note,
+    }
+    axios.post("https://word-back.herokuapp.com/api/words/",
+    addWord)
+   .then((response)=>{
+     console.log("add word")
+     window.location="/"
+   })
     this.setState((currentState) => {
-      return { name: "", meaning: "", note: "" };
+      return { language:"",
+      name: "",
+      meaning: "",
+      note: "", };
     });
+
+    
   };
   handleInput = (inputEvent) => {
-    const value = inputEvent.target.value;
-    const id = inputEvent.target.id;
-    //synthetic event
+    const {id,value} = inputEvent.target
     this.setState((currentState) => {
       return { [id]: value };
     });
-    // console.log(this.state);
-    //setState is asyncronos so setState can take secont function
-    //so see console.log first and then fucntion
-    //so you use for visualizatin
+
   };
   render() {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
-import logo from "./wordcardlogo.png";
-import bookmark from "./bookmark.png";
+import logo from "../img/wordcardlogo.png";
+import bookmark from "../img/bookmark.png";
 
 const Title = () => {
   const toggleClick = () => {

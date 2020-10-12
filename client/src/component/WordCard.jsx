@@ -2,8 +2,7 @@ import React from "react";
 
 const WordCard = ({ word, removeWord }) => {
   const handleClick = (clickEvent) => {
-    removeWord(word.id);
-    //remove word of id{word.id} from dictionary
+    removeWord(word._id);
   };
 
   return (
@@ -11,7 +10,7 @@ const WordCard = ({ word, removeWord }) => {
       <p>word: {word.name}</p>
       <p>meaning: {word.meaning}</p>
       <p>note: {word.note}</p>
-      <button onClick={handleClick} value={word.remember} id="remember">
+      <button onClick={handleClick} id={word._id}>
         I know this word!
       </button>
     </section>
