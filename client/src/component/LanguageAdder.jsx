@@ -1,22 +1,33 @@
 import React, { Component } from "react";
+import axios from "axios"
 
 class LanguageAdder extends Component {
   state = {
-    name: "",
+    language: "",
   };
 
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
-    this.props.addLanguage({ ...this.state });
+    const language={
+      language:this.state.language
+    }
+
+    console.log(language)
+    axios.post("https://word-back.herokuapp.com/api/languages/", language)
+    .then((res)=>console.log(res.data))
+    // this.props.addLanguage({ ...this.state });
+    // window.location = "/";
+    this.setState({
+      language: "",
+    });
   };
 
   handleInput = (inputEvent) => {
     const value = inputEvent.target.value;
-    const id = inputEvent.target.id;
+    // const id = inputEvent.target.id;
     this.setState((currentState) => {
-      return { [id]: value };
+      return { language: value };
     });
-    console.log(value);
   };
   render() {
     return (
@@ -25,9 +36,10 @@ class LanguageAdder extends Component {
           <label>
             <input
               type="text"
+              required
               onChange={this.handleInput}
-              id="name"
-              value={this.state.name}
+              id="language"
+              value={this.state.language}
             />
           </label>
           <button>Add</button>

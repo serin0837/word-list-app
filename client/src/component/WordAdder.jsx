@@ -7,8 +7,24 @@ class WordAdder extends React.Component {
     name: "",
     meaning: "",
     note: "",
+    languages:[]
   };
 
+  // componentDidMount() {
+
+  //   axios.get("https://word-back.herokuapp.com/api/languages/")
+  //   .then(response=>{
+  //     console.log(response.data)
+  //     if(response.data.length>0){
+  //           this.setState({
+  //   languages: response.data.map(language=>language.language),
+  //   language:response.data[0].language// I don't understand this part
+    
+  //   });
+
+  //     }
+  //   })
+  // }
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
     const addWord ={
@@ -43,6 +59,21 @@ class WordAdder extends React.Component {
     return (
       <section className="form">
         <form onSubmit={this.handleSubmit} className="form__card">
+        {/* <label className="label">
+            Language: */}
+            {/* <select
+              type="text"
+              onChange={this.handleInput}
+              id="language"
+              value={this.state.language}
+            >
+            {this.state.languages.map((language)=>{
+              return (
+                <option key={language} value={language}>{language}</option>
+              )
+            })}
+            </select> */}
+          {/* </label> */}
           <label className="label">
             Word:
             <input

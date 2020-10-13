@@ -1,20 +1,25 @@
 import React, { Component } from "react";
 import LanguageCard from "./LanguageCard";
 import LanguageAdder from "./LanguageAdder";
+import axios from "axios"
 
 class AsideMenu extends Component {
   state = {
-    languages: [{ name: "Korean" }, { name: "Spanish" }],
+    languages: [],
   };
 
-  addLanguage = (nlanguage) => {
-    this.setState((currentState) => {
-      return { languages: [...currentState.languages, nlanguage] };
-    });
-  };
+  componentDidMount() {
+
+    axios.get("https://word-back.herokuapp.com/api/languages/")
+    .then(({data})=>{
+      console.log(data)
+      this.setState({languages:data})
+    })
+  } 
+
 
   render() {
-    const { languages, students } = this.state;
+    const { languages} = this.state;
     return (
       <aside className="aside">
         <header>
@@ -25,9 +30,9 @@ class AsideMenu extends Component {
         </header>
         <div>
           {languages.map((language) => {
-            return <LanguageCard language={language} key={language.name} />;
+            return <LanguageCard language={language} key={language._id} />;
           })}
-          <LanguageAdder addLanguage={this.addLanguage} />
+          <LanguageAdder />
         </div>
       </aside>
     );
