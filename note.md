@@ -40,4 +40,6 @@
 
 # backlog
 
-- 20.10.07 connect with mongo DB
+- 07.10.20 connect with mongo DB
+
+- 12.10.20 get, post, delete methods working :)
