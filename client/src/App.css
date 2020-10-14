@@ -67,11 +67,14 @@ header img {
 }
 
 /* word adder form  */
-
+.form {
+  display: flex;
+  justify-content: center;
+}
 .form__card {
   background-color: #d7bbaf;
   width: 200px;
-  margin: 3rem 30%;
+  margin-top: 3rem;
   border-radius: 1rem;
   padding: 3rem;
 }
@@ -83,6 +86,13 @@ header img {
   height: 2.5rem;
 }
 
+.form__card select {
+  margin: 1rem;
+  border-radius: 1rem;
+  border: none;
+  height: 2.5rem;
+  width: 9rem;
+}
 .form__card button {
   width: 10rem;
   height: 2.5rem;
@@ -101,6 +111,7 @@ header img {
 /* word card---------- */
 .cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 2rem;
   padding: 1rem;

@@ -1,11 +1,17 @@
 import React from "react";
-import { Link } from "@reach/router";
 
-const LanguageCard = ({ language }) => {
+const LanguageCard = ({ language,removeLanguage }) => {
+  const handleClick =(clickEvent)=>{
+    removeLanguage(language._id)
+  }
   return (
+    <div>
     <button className="aside-button">
-      <Link to={language.language}>{language.language}</Link>
+      {language.language}
+      
     </button>
+    <span onClick={handleClick} className="closeBtn">&times;</span>
+    </div>
   );
 };
 

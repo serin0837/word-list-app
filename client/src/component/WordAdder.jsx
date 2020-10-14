@@ -74,6 +74,7 @@ class WordAdder extends React.Component {
             })}
             </select>
           </label>
+          <br/>
           <label className="label">
             Word:
             <input

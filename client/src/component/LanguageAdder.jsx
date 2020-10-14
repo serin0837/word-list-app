@@ -20,6 +20,7 @@ class LanguageAdder extends Component {
     this.setState({
       language: "",
     });
+    window.location = "/"
   };
 
   handleInput = (inputEvent) => {
