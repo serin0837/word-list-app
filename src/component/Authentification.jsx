@@ -1,11 +1,9 @@
 import React from 'react';
-import { useContext } from 'react';
 import { useState } from 'react';
 import Login from "./Login"
 import Logout from "./Logout"
 
 const Authentification = () => {
-
     const [isLogin,SetisLogin] = useState(false)
 //use state accept intial
     const handleLogin= ()=> {
