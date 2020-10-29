@@ -44,7 +44,7 @@ class Footer extends Component {
         </div>
 
         <div>
-          <p>serin0837@icloud.com | Serin Jeon &copy;All Rights Reserved</p>
+          <p> © 2020. Serin Jeon - all rights reserved | serin0837@icloud.com</p>
         </div>
       </footer>
     );
