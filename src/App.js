@@ -13,8 +13,8 @@ import auth from "./auth";
 
 
 const App = () => {
-  const [googleId,setGoogleId] = useState(auth.googleId)
-  const [givenName,setGivenName] = useState(auth.givenName)
+  let [googleId,setGoogleId] = useState(auth.googleId)
+  let [givenName,setGivenName] = useState(auth.givenName)
   auth.setListener((id,name)=>{
     setGoogleId(id) //setState
     setGivenName(name) //setState
@@ -23,11 +23,17 @@ const App = () => {
     // call the two functions inside function
     //causing app to rerender
   })
+  if(givenName===null){
+    givenName="Guest"
+  }
   return (
       <div className="App">
       <Title />
       <AsideMenu />
       <main className="main">
+        <h2>Welcome {givenName}!</h2>
+        <p>Add new words that you want to remember!</p>
+        {givenName==="Guest"&&(<p>Login if you want save your own words.</p>)}
         <WordAdder googleId={googleId}/>
         <WordList googleId={googleId}/>
       </main>

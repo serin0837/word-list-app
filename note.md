@@ -50,3 +50,5 @@
 - 11.12.20
   local storage:
   / 캐쉬, 쿠키 차이
+  application에서 local strage 볼수 있음
+  TDD practice

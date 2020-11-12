@@ -17,7 +17,14 @@ class WordList extends Component {
       this.setState({words:data})
     })
   }
-
+  componentDidUpdate(prevProp){
+    if(prevProp.googleId!==this.props.googleId){
+      axios.get(`https://word-back.herokuapp.com/api/words/userId/${this.props.googleId}`)
+      .then(({data})=>{
+        this.setState({words:data})
+      })
+    }
+  }
   
   removeWord(id){
     axios.delete("https://word-back.herokuapp.com/api/words/"+id)
