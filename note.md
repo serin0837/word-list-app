@@ -46,3 +46,7 @@
 
 - OAuth
   Open Auth
+
+- 11.12.20
+  local storage:
+  / 캐쉬, 쿠키 차이

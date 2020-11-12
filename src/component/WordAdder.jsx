@@ -28,6 +28,7 @@ class WordAdder extends React.Component {
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
     const addWord ={
+      userId:this.props.googleId,
       language:this.state.language,
       name: this.state.name,
       meaning: this.state.meaning,

@@ -12,7 +12,7 @@ class WordList extends Component {
   }
   }
   componentDidMount(){
-    axios.get("https://word-back.herokuapp.com/api/words/")
+    axios.get(`https://word-back.herokuapp.com/api/words/userId/${this.props.googleId}`)
     .then(({data})=>{
       this.setState({words:data})
     })

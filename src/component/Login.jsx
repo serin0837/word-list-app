@@ -6,8 +6,8 @@ const clientId='1003655510490-n8lr0hcs9l5goq54nr12fefevnfmncma.apps.googleuserco
 
 function Login(prop){
     const onSuccess =(res)=>{
-        console.log('[Login Success] currentUser:',res.profileObj.googleId)
-        prop.handleLogin()
+        console.log('[Login Success] currentUser:',res.profileObj)
+        prop.handleLogin(res.profileObj.googleId,res.profileObj.givenName)
     }
 
     const onFailure = (res)=>{
