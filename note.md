@@ -52,3 +52,12 @@
   / 캐쉬, 쿠키 차이
   application에서 local strage 볼수 있음
   TDD practice
+
+working on convention
+like variable name and white space after comma
+typescript- what type is it?
+built on top of js
+run time - js
+
+javascipr is valid typescript
+but typescript is not valid js

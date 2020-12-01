@@ -7,10 +7,10 @@ class AsideMenu extends Component {
   constructor(props){
     super(props)
     this.removeLanguage=this.removeLanguage.bind(this)
-  this.state = {
-    languages: [],
-    selectedLanguage:"",
-  }
+    this.state = {
+      languages: [],
+      selectedLanguage:"",
+    }
   };
 
   componentDidMount() {
@@ -31,9 +31,6 @@ class AsideMenu extends Component {
       
     })
   }
-
-
-  select
   render() {
     const { languages} = this.state;
     return (

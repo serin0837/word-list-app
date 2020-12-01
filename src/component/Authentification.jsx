@@ -5,14 +5,14 @@ import Logout from "./Logout"
 import auth from "../auth"
 
 const Authentification = () => {
-    const [isLogin,SetisLogin] = useState(false)
+    const [isLogin, setIsLogin] = useState(false)
 //use state accept intial
-    const handleLogin= (googleId,givenName)=> {
-        SetisLogin(true)
-        auth.onLogin(googleId,givenName)
+    const handleLogin= (googleId, givenName)=> {
+        setIsLogin(true)
+        auth.onLogin(googleId, givenName)
     }
     const handleLogout= ()=> {
-        SetisLogin(false)
+        setIsLogin(false)
         auth.onLogout()
     }
     if(isLogin){
