@@ -1,4 +1,4 @@
-# Word-list-app
+# Word Card / Word-list-app
 
 - This app is developed with React.
 - You can add word cards that you want to memorize and you can remove word cards if you know that word.
@@ -10,3 +10,7 @@
 ## start
 
 `npm start`
+
+## Live
+
+[here](https://word-card.netlify.app/)

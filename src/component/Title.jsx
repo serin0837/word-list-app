@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import logo from "../img/wordcardlogo.png";
-import Authentification from "./Authentification"
+import Authentication from "./Authentication"
 
 const Title = () => {
   return (
@@ -12,7 +12,7 @@ const Title = () => {
       </Link>
       </div>
       <div>
-      <Authentification/>
+      <Authentication/>
       </div>
     </header>
   );

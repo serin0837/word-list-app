@@ -3,33 +3,29 @@ import React from "react";
 
 class WordAdder extends React.Component {
   state = {
-    language:"",
+    language: "",
     name: "",
     meaning: "",
     note: "",
-    languages:[]
+    languages: []
   };
 
   componentDidMount() {
-
     axios.get("https://word-back.herokuapp.com/api/languages/")
     .then(response=>{
-      console.log(response.data)
       if(response.data.length>0){
-            this.setState({
-    languages: response.data.map(language=>language.language),
-    language:response.data[0].language// I don't understand this part
-    
-    });
-
+        this.setState({
+          languages: response.data.map(language=> language.language),
+          language: response.data[0].language// I don't understand this part
+        });
       }
     })
   }
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
-    const addWord ={
-      userId:this.props.googleId,
-      language:this.state.language,
+    const addWord = {
+      userId: this.props.googleId,
+      language: this.state.language,
       name: this.state.name,
       meaning: this.state.meaning,
       note: this.state.note,
@@ -47,10 +43,9 @@ class WordAdder extends React.Component {
       note: "", };
     });
 
-    
   };
   handleInput = (inputEvent) => {
-    const {id,value} = inputEvent.target
+    const {id, value} = inputEvent.target
     this.setState((currentState) => {
       return { [id]: value };
     });

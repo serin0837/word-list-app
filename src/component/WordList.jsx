@@ -29,7 +29,6 @@ class WordList extends Component {
   removeWord(id){
     axios.delete("https://word-back.herokuapp.com/api/words/"+id)
     .then(res=>{console.log(res.data)})//delete working
-
     this.setState({
       words:this.state.words.filter(word=>word._id!==id)//after bind it's working
     })
@@ -47,15 +46,3 @@ class WordList extends Component {
 }
 
 export default WordList;
-
-//  WordList = ({ words, removeWord }) => {
-//   return (
-//     <section className="cards">
-//       {words.map((word) => {
-//         return <WordCard word={word} key={word.name} removeWord={removeWord} />;
-//       })}
-//     </section>
-//   );
-// };
-
-// export default WordList;

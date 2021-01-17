@@ -4,7 +4,7 @@ import Login from "./Login"
 import Logout from "./Logout"
 import auth from "../auth"
 
-const Authentification = () => {
+const Authentication = () => {
     const [isLogin, setIsLogin] = useState(false)
 //use state accept intial
     const handleLogin= (googleId, givenName)=> {
@@ -22,4 +22,4 @@ const Authentification = () => {
     };
 };
 
-export default Authentification;
+export default Authentication;

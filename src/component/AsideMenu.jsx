@@ -14,10 +14,8 @@ class AsideMenu extends Component {
   };
 
   componentDidMount() {
-
     axios.get("https://word-back.herokuapp.com/api/languages/")
     .then(({data})=>{
-      console.log(data)
       this.setState({languages:data})
     })
   } 
@@ -25,7 +23,6 @@ class AsideMenu extends Component {
   removeLanguage(id){
     axios.delete("https://word-back.herokuapp.com/api/languages/"+id)
     .then(res=>{console.log(res.data)})
-
     this.setState({
       languages:this.state.languages.filter(language=>language._id!==id)//after bind it's working
       
