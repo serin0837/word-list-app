@@ -1,7 +1,7 @@
 import React from "react";
 import {GoogleLogin} from "react-google-login"
 
-const clientId='1003655510490-n8lr0hcs9l5goq54nr12fefevnfmncma.apps.googleusercontent.com'
+const clientId ='18802594293-vt53ef60po4ss20urmojebk49sa92lhs.apps.googleusercontent.com'
 
 
 function Login(prop){
