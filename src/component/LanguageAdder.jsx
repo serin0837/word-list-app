@@ -6,6 +6,12 @@ class LanguageAdder extends Component {
     language: "",
   };
 
+  
+  handleInput = (inputEvent) => {
+    const value = inputEvent.target.value;
+    this.setState({language: value });
+  };
+
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
     const language = {
@@ -19,12 +25,6 @@ class LanguageAdder extends Component {
     window.location = "/"
   };
 
-  handleInput = (inputEvent) => {
-    const value = inputEvent.target.value;
-    this.setState((currentState) => {
-      return { language: value };
-    });
-  };
   render() {
     return (
       <section className = "adder-form">

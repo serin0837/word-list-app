@@ -1,14 +1,15 @@
 ## Description
 
-- Word Card is web application to help you memorize new words with different languages.
+- Word Card is a web application to help you memorize new words in different languages.
+
 - You can :
-  - Create your own word cards for new words which you want to memorize.
-  - Delete your word cards that you have memorized.
+  - Create your word cards for new words that you want to memorize.
+  - Delete the word cards that you have memorized.
   - Create word cards in different languages.
 
 ## Technologies
 
-- Front end: Responsive website built with React, Router and Google OAUth.
+- Front end: Responsive website built with React, Router and Google OAuth.
 
   - [🔗Live](https://word-card.netlify.app/)
 
@@ -19,5 +20,5 @@
 ## Current Issues
 
 - Current issue
-  - Can not add data if user not login.
-  - Language data.
+  - Can not add data when a user is not login with Google.
+  - Can add language data as a guest but data stay even after login with Google.

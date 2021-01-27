@@ -7,18 +7,18 @@ import auth from "../auth"
 const Authentication = () => {
     const [isLogin, setIsLogin] = useState(false)
 //use state accept intial
-    const handleLogin= (googleId, givenName)=> {
+    const handleLogin = (googleId, givenName)=> {
         setIsLogin(true)
         auth.onLogin(googleId, givenName)
     }
-    const handleLogout= ()=> {
+    const handleLogout = ()=> {
         setIsLogin(false)
         auth.onLogout()
     }
     if(isLogin){
-        return <Logout handleLogout={handleLogout}/>
+        return <Logout handleLogout = {handleLogout}/>
     }else {
-        return <Login handleLogin={handleLogin}/>
+        return <Login handleLogin = {handleLogin}/>
     };
 };
 

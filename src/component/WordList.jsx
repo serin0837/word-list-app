@@ -4,41 +4,40 @@ import axios from "axios"
 import WordCard from "./WordCard"
 
 class WordList extends Component {
-  constructor(props){
-  super(props)
-  this.removeWord=this.removeWord.bind(this)
-    this.state={
-    words:[]
+  state = {
+    words: []
   }
-  }
+  
   componentDidMount(){
     axios.get(`https://word-back.herokuapp.com/api/words/userId/${this.props.googleId}`)
-    .then(({data})=>{
-      this.setState({words:data})
+    .then(({ data })=>{
+      this.setState({words: data})
     })
   }
+
   componentDidUpdate(prevProp){
-    if(prevProp.googleId!==this.props.googleId){
+    if(prevProp.googleId !== this.props.googleId){
       axios.get(`https://word-back.herokuapp.com/api/words/userId/${this.props.googleId}`)
-      .then(({data})=>{
-        this.setState({words:data})
+      .then(({ data })=>{
+        this.setState({words: data})
       })
     }
   }
   
-  removeWord(id){
+  removeWord = (id) => {
     axios.delete("https://word-back.herokuapp.com/api/words/"+id)
-    .then(res=>{console.log(res.data)})//delete working
-    this.setState({
-      words:this.state.words.filter(word=>word._id!==id)//after bind it's working
-    })
+    .then(res => { this.setState({
+      words:this.state.words.filter(word => word._id !== id)//after bind it's working
+      })
+      }
+    )
   }
 
   render() {
     return (
       <section className="cards">
-       {this.state.words.map((word) => {
-        return <WordCard word={word} key={word._id} removeWord={this.removeWord}/>;
+        {this.state.words.map(word => {
+        return <WordCard word = {word} key = {word._id} removeWord = {this.removeWord}/>;
       })}
       </section>
     );

@@ -4,15 +4,10 @@ import LanguageAdder from "./LanguageAdder";
 import axios from "axios"
 
 class AsideMenu extends Component {
-  constructor(props){
-    super(props)
-    this.removeLanguage=this.removeLanguage.bind(this)
-    this.state = {
-      languages: [],
-      selectedLanguage:"",
-    }
-  };
-
+  state = {
+    languages: [],
+    selectedLanguage: ""
+  }
   componentDidMount() {
     axios.get("https://word-back.herokuapp.com/api/languages/")
     .then(({data})=>{
@@ -20,12 +15,12 @@ class AsideMenu extends Component {
     })
   } 
 
-  removeLanguage(id){
+  removeLanguage = (id) => {
     axios.delete("https://word-back.herokuapp.com/api/languages/"+id)
-    .then(res=>{console.log(res.data)})
-    this.setState({
-      languages:this.state.languages.filter(language=>language._id!==id)//after bind it's working
-      
+    .then(res => {
+      this.setState({
+      languages:this.state.languages.filter(language => language._id !== id)
+      })
     })
   }
   render() {

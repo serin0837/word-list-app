@@ -33,8 +33,6 @@ class Footer extends Component {
           <a
             aria-label="Email Serin"
             href="mailto:serin0837@icloud.com"
-            // data-position="top"
-            // data-tooltip="Email Serin"
             target="_blank"
             rel="noopener noreferrer"
             className="btn contact-details"
@@ -42,7 +40,6 @@ class Footer extends Component {
             <i className="fa fa-envelope"></i>
           </a>
         </div>
-
         <div>
           <p> © 2020. Serin Jeon - all rights reserved | serin0837@icloud.com</p>
         </div>

@@ -13,14 +13,15 @@ class WordAdder extends React.Component {
   componentDidMount() {
     axios.get("https://word-back.herokuapp.com/api/languages/")
     .then(response=>{
-      if(response.data.length>0){
+      if(response.data.length > 0){
         this.setState({
-          languages: response.data.map(language=> language.language),
+          languages: response.data.map(language => language.language),
           language: response.data[0].language// I don't understand this part
         });
       }
     })
   }
+
   handleSubmit = (submitEvent) => {
     submitEvent.preventDefault();
     const addWord = {
@@ -30,27 +31,24 @@ class WordAdder extends React.Component {
       meaning: this.state.meaning,
       note: this.state.note,
     }
-    axios.post("https://word-back.herokuapp.com/api/words/",
-    addWord)
-   .then((response)=>{
-     console.log("add word")
-     window.location="/"
-   })
-    this.setState((currentState) => {
-      return { language:"",
+    axios.post("https://word-back.herokuapp.com/api/words/", addWord)
+    .then((response)=>{
+      console.log("add word")
+      window.location="/"
+    })
+    this.setState({ 
+      language:"",
       name: "",
       meaning: "",
-      note: "", };
+      note: ""
     });
-
   };
+
   handleInput = (inputEvent) => {
     const {id, value} = inputEvent.target
-    this.setState((currentState) => {
-      return { [id]: value };
-    });
-
+    this.setState({ [id]: value });
   };
+
   render() {
     return (
       <section className="form">
