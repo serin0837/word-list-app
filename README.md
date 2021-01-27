@@ -1,16 +1,23 @@
 ## Description
 
-- This Word Card application is developed with React,
-- You can add word cards that you want to memorize and you can remove word cards if you know that word.
+- Word Card is web application to help you memorize new words with different languages.
+- You can :
+  - Create your own word cards for new words which you want to memorize.
+  - Delete your word cards that you have memorized.
+  - Create word cards in different languages.
 
 ## Technologies
 
-`npm install`
+- Front end: Responsive website built with React, Router and Google OAUth.
 
-## Future Improvement
+  - [🔗Live](https://word-card.netlify.app/)
 
-`npm start`
+- Back end: Server written down in Express and MongoDB.
+  - [🔗Live](https://word-back.herokuapp.com/api/words)
+  - [💻Code](https://github.com/serin0837/word-backend)
 
-## Current & Potential Issue
+## Current Issues
 
-[here](https://word-card.netlify.app/)
+- Current issue
+  - Can not add data if user not login.
+  - Language data.
