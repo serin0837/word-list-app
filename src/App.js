@@ -8,23 +8,26 @@ import Footer from "./component/Footer";
 import auth from "./auth";
 
 const App = () => {
-  let [googleId,setGoogleId] = useState(auth.googleId)
-  let [givenName,setGivenName] = useState(auth.givenName)
-  auth.setListener((id,name)=>{
+  let [googleId, setGoogleId] = useState(auth.googleId)
+  let [givenName, setGivenName] = useState(auth.givenName)
+
+  auth.setListener((id,name) => {
     setGoogleId(id)
     setGivenName(name)
   })
+
   if(givenName === null){
     givenName = "Guest"
   }
+
   return (
-      <div className="App">
+      <div className = "App">
       <Title />
       <AsideMenu />
-      <main className="main">
-        <h2>Welcome {givenName}!</h2>
-        <p>Add new words that you want to remember!</p>
-        {givenName==="Guest"&&(<p>Login if you want save your own words.</p>)}
+      <main className = "main" >
+        <h2 style = {{"marginTop": "10px"}}>Welcome {givenName}!</h2>
+        <p>Add languages and new words that you want to remember.</p>
+        {givenName === "Guest"&&(<p>Login if you want save your own words.</p>)}
         <WordAdder googleId = {googleId}/>
         <WordList googleId = {googleId}/>
       </main>

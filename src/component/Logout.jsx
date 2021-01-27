@@ -1,23 +1,22 @@
 import React from "react";
-import {GoogleLogout} from "react-google-login";
+import { GoogleLogout } from "react-google-login";
 
-const clientId= '18802594293-vt53ef60po4ss20urmojebk49sa92lhs.apps.googleusercontent.com'
+const clientId = process.env.REACT_APP_API_KEY;
 
 function Logout(prop){
-    const onSuccess=()=>{
+    const onSuccess = () => {
         alert("Logout made successfully")
         prop.handleLogout()
     }
 
-
 return (
     <div>
         <GoogleLogout
-        clientId={clientId}
-        buttonText="Logout"
-        onLogoutSuccess={onSuccess}></GoogleLogout>
+        clientId = {clientId}
+        buttonText = "Logout"
+        onLogoutSuccess = {onSuccess}></GoogleLogout>
     </div>
-)
+    )
 }
 
 export default Logout;

@@ -1,16 +1,16 @@
-# Word Card / Word-list-app
+## Description
 
-- This app is developed with React.
+- This Word Card application is developed with React,
 - You can add word cards that you want to memorize and you can remove word cards if you know that word.
 
-## install
+## Technologies
 
 `npm install`
 
-## start
+## Future Improvement
 
 `npm start`
 
-## Live
+## Current & Potential Issue
 
 [here](https://word-card.netlify.app/)

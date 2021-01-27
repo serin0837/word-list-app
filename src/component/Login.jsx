@@ -1,32 +1,28 @@
 import React from "react";
-import {GoogleLogin} from "react-google-login"
+import { GoogleLogin } from "react-google-login"
 
-const clientId ='18802594293-vt53ef60po4ss20urmojebk49sa92lhs.apps.googleusercontent.com'
-
+const clientId = process.env.REACT_APP_API_KEY;
 
 function Login(prop){
-    const onSuccess =(res)=>{
-        console.log('[Login Success] currentUser:',res.profileObj)
+    const onSuccess = (res) => {
         prop.handleLogin(res.profileObj.googleId,res.profileObj.givenName)
     }
 
     const onFailure = (res)=>{
-        console.log('[Login failed res:',res);
+        console.log('[Login failed res:', res);
     }
 
     return (
         <div>
             <GoogleLogin
-            clientId={clientId}
-            buttonText="Login"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            cookiePolicy={'single_host_origin'}
-            style={{marginTop:"100px"}}
-            isSignedIn={true}></GoogleLogin>
+            clientId = {clientId}
+            buttonText = "Login"
+            onSuccess = {onSuccess}
+            onFailure = {onFailure}
+            cookiePolicy = {'single_host_origin'}
+            isSignedIn = {true}></GoogleLogin>
         </div>
     )
 }
 
 export default Login
-
